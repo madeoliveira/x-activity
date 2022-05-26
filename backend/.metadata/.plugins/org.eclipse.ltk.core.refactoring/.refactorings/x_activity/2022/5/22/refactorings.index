@@ -1,0 +1,23 @@
+1653397629666	Rename package 'com.github.madeoliveira.physical_activity'
+1653397654878	Rename package 'com.github.madeoliveira.physical_activity.config'
+1653397687498	Rename package 'com.github.madeoliveira.physical_activity.entities'
+1653397712214	Rename package 'com.github.madeoliveira.physical_activity.entities.enums'
+1653397727784	Rename package 'com.github.madeoliveira.physical_activity.entities.pk'
+1653397740990	Rename package 'com.github.madeoliveira.physical_activity.repositories'
+1653397754799	Rename package 'com.github.madeoliveira.physical_activity.services'
+1653397769591	Rename package 'com.github.madeoliveira.physical_activity.resources'
+1653403240906	Copy compilation unit
+1653403318148	Copy compilation unit
+1653415470461	Copy compilation unit
+1653417136302	Move compilation unit
+1653417146170	Delete element
+1653568783171	Copy compilation unit
+1653571759750	Copy compilation unit
+1653571956619	Copy compilation unit
+1653571985290	Rename type 'AnalysisBioimpedance'
+1653572031081	Rename type 'AnalysisBioimpedanceRepository'
+1653572357449	Copy compilation unit
+1653573366237	Delete element
+1653573396427	Copy compilation unit
+1653573579595	Delete element
+1653573604127	Copy compilation unit

@@ -1,0 +1,33 @@
+package com.github.madeoliveira.x_activity.entities;
+
+//@Entity
+//@Table(name = "tb_ analysisBioimpedance")
+public class AnalysisBioimpedance  {
+	
+
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private Double PercFat;
+	private Double ClassifPercFat;
+	private Double PercLleanMass;
+	private Double TotBobyWater;
+	private Double BoneMass;
+	private Double FatMass;
+	private Double FatFreeMass;
+	private Double VisceFatIndex;
+	private Double MetabolicAge;
+
+//	@ManyToOne
+//	@JoinColumn(name = "client_id")
+	private User client;
+
+
+	
+
+	
+	
+
+	
+
+}

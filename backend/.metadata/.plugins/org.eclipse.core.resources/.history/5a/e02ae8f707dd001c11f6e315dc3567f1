@@ -1,0 +1,130 @@
+package com.github.madeoliveira.x_activity.config;
+
+import java.time.Instant;
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+
+import com.github.madeoliveira.x_activity.entities.Bioimpedance;
+import com.github.madeoliveira.x_activity.entities.Exercise;
+import com.github.madeoliveira.x_activity.entities.Group;
+import com.github.madeoliveira.x_activity.entities.Planner;
+import com.github.madeoliveira.x_activity.entities.PlannerExercise;
+import com.github.madeoliveira.x_activity.entities.Register;
+import com.github.madeoliveira.x_activity.entities.User;
+import com.github.madeoliveira.x_activity.entities.enums.PlannerStatus;
+import com.github.madeoliveira.x_activity.repositories.BioimpedanceRepository;
+import com.github.madeoliveira.x_activity.repositories.ExerciseRepository;
+import com.github.madeoliveira.x_activity.repositories.GroupRepository;
+import com.github.madeoliveira.x_activity.repositories.PlannerExerciseRepository;
+import com.github.madeoliveira.x_activity.repositories.PlannerRepository;
+import com.github.madeoliveira.x_activity.repositories.UserRepository;
+
+@Configuration
+@Profile("test")
+public class TestConfig implements CommandLineRunner {
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Autowired
+	private PlannerRepository plannerRepository;
+	@Autowired
+	private GroupRepository groupRepository;
+
+	@Autowired
+	private ExerciseRepository exerciseRepository;
+
+	@Autowired
+	private PlannerExerciseRepository plannerExerciseRepository;
+
+	@Autowired
+	private BioimpedanceRepository bioimpedanceRepository;
+
+	@Override
+	public void run(String... args) throws Exception {
+
+		Group group1 = new Group(null, "Peito");
+		Group group2 = new Group(null, "Ombro");
+		Group group3 = new Group(null, "Perna");
+		Group group4 = new Group(null, "Biceps");
+
+		Exercise exercise1 = new Exercise(null, "Barra fixa supinada",
+				"Em uma barra suspensa, se pendure com a palma da mão virada para você (pegada supinada), puxe o corpo para cima levando o queixo acima da barra e aproximando os cotovelos ao tronco");
+		Exercise exercise2 = new Exercise(null, "Agachamento",
+				" Para realizar o exercício, posicione-se em pé, com o corpo ereto e as pernas levemente abertas, mantendo os pés na mesma linha dos ombros e com os dedos dos pés apontando suavemente para fora.");
+		Exercise exercise3 = new Exercise(null, "Elevação frontal",
+				"Colocar os braços ao lado do corpo e subir para frente até a linha do ombro.");
+		Exercise exercise4 = new Exercise(null, "Encolhimento de ombros",
+				"Colocar o braço ao lado do corpo e fazer o movimento subindo os ombros, sem dobrar os cotovelos, mantendo eles sempre retos.");
+		Exercise exercise5 = new Exercise(null, "Supino inclinado com halteres",
+				"Posicionamento do corpo no banco e utilizar uma inclinação de banco entre 30º a 45º, a posição que dá maior foco no peitoral superior. Se for muito inclinado, acabará estimulando o anterior de ombro demais.");
+
+		groupRepository.saveAll(Arrays.asList(group1, group2, group3, group4));
+		exerciseRepository.saveAll(Arrays.asList(exercise1, exercise2, exercise3));
+
+		exercise1.getGroups().add(group4);
+		exercise2.getGroups().add(group3);
+		exercise3.getGroups().add(group2);
+		exercise4.getGroups().add(group2);
+		exercise5.getGroups().add(group1);
+
+		exerciseRepository.saveAll(Arrays.asList(exercise1, exercise2, exercise3, exercise4, exercise5));
+
+		User user1 = new User(null, "Rafael", "rafael@gmail.com", "11888585", "sdfwef");
+		User user2 = new User(null, "Marcos", "marcos@gmail.com", "234112121", "FDGFDGD");
+		User user3 = new User(null, "Marcio", "marcio@gmail.com", "2345345435", "fgtfhhyg");
+		User user4 = new User(null, "João", "marcos@gmail.com", "234112121", "FDGFDGD");
+
+		Register reg1 = new Register(null, "123890123-45", "343435567", "Rua David, 88", "Barra Funda", "São Paulo",
+				"M", user1);
+		Register reg2 = new Register(null, "533726247-25", "87654345", "Rua jARAGUA, 231", "Barra Funda", "São Paulo",
+				"M", user2);
+		Register reg3 = new Register(null, "12345567-95", "98578578", "Av. Ipiranga, 919", "Barra Funda", "São Paulo",
+				"M", user3);
+		Register reg4 = new Register(null, "533726247-25", "87654345", "AV. Rio Branco, 956", "Barra Funda",
+				"São Paulo", "M", user4);
+
+		user1.setRegister(reg1);
+		user2.setRegister(reg2);
+		user3.setRegister(reg3);
+		user4.setRegister(reg4);
+
+		userRepository.save(user1);
+		userRepository.save(user2);
+		userRepository.save(user3);
+		userRepository.save(user4);
+
+		Planner planner1 = new Planner(null, Instant.parse("2022-03-13T11:45:08Z"), PlannerStatus.Concluir,
+				"Manter a respiração", user1);
+		Planner planner2 = new Planner(null, Instant.parse("2022-03-14T12:15:03Z"), PlannerStatus.Historico,
+				"Não perder o foco", user2);
+		Planner planner3 = new Planner(null, Instant.parse("2022-03-15T18:28:10Z"), PlannerStatus.Disponivel,
+				"Abdomem sempre contraido", user3);
+		Planner planner4 = new Planner(null, Instant.parse("2022-03-13T11:45:08Z"), PlannerStatus.Concluir,
+				"Consentração nos movimentos", user4);
+		Planner planner5 = new Planner(null, Instant.parse("2022-03-15T18:28:10Z"), PlannerStatus.Disponivel,
+				"Abdomem sempre contraido", user1);
+		Planner planner6 = new Planner(null, Instant.parse("2022-03-13T11:45:08Z"), PlannerStatus.Concluir,
+				"Consentração nos movimentos", user1);
+
+		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4));
+		plannerRepository.saveAll(Arrays.asList(planner1, planner2, planner3, planner4, planner5, planner6));
+
+		PlannerExercise plannerExercise1 = new PlannerExercise(planner1, exercise4, 3, 12, 18.0);
+		PlannerExercise plannerExercise2 = new PlannerExercise(planner1, exercise3, 3, 10, 10.0);
+		PlannerExercise plannerExercise3 = new PlannerExercise(planner2, exercise1, 4, 15, 12.0);
+		PlannerExercise plannerExercise4 = new PlannerExercise(planner3, exercise4, 2, 16, 11.0);
+		PlannerExercise plannerExercise5 = new PlannerExercise(planner1, exercise5, 5, 8, 14.0);
+
+		plannerExerciseRepository.saveAll(Arrays.asList(plannerExercise1, plannerExercise2, plannerExercise3,
+				plannerExercise4, plannerExercise5));
+
+		Bioimpedance bio1 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user4);
+
+	}
+
+}

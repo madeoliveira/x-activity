@@ -1,0 +1,52 @@
+package com.github.madeoliveira.x_activity.entities;
+
+import java.io.Serializable;
+
+
+
+//@Entity
+//@Table(name = "tb_ analysisBioimpedance")
+public class AnalysisBioimpedance  {
+	
+
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	private Double PercFat;
+	private Double ClassifPercFat;
+	private Double PercLleanMass;
+	private Double TotBobyWater;
+	private Double BoneMass;
+	private Double FatMass;
+	private Double FatFreeMass;
+	private Double VisceFatIndex;
+	private Double MetabolicAge;
+
+//	@ManyToOne
+//	@JoinColumn(name = "client_id")
+	private User client;
+
+public AnalysisBioimpedance(Long id, Double percFat, Double classifPercFat, Double percLleanMass, Double totBobyWater,
+		Double boneMass, Double fatMass, Double fatFreeMass, Double visceFatIndex, Double metabolicAge, User client) {
+	super();
+	this.id = id;
+	PercFat = percFat;
+	ClassifPercFat = classifPercFat;
+	PercLleanMass = percLleanMass;
+	TotBobyWater = totBobyWater;
+	BoneMass = boneMass;
+	FatMass = fatMass;
+	FatFreeMass = fatFreeMass;
+	VisceFatIndex = visceFatIndex;
+	MetabolicAge = metabolicAge;
+	this.client = client;
+}
+
+	
+
+	
+	
+
+	
+
+}
