@@ -48,7 +48,7 @@ public class BioimpedanceService {
 		entity.setPercFat(obj.getPercFat());
 		entity.setPercLleanMass(obj.getPercLleanMass());
 		entity.setTotBobyWater(obj.getTotBobyWater());
-		entity.setVisceFatIndex(obj.getVisceFatIndex());
+		entity.setVisceralFatIndex(obj.getVisceralFatIndex());
 
 	}
 

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "tb_bioimpedance")
@@ -19,14 +20,22 @@ public class Bioimpedance  implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Double PercFat;
-	private Double PercLleanMass;
-	private Double TotBobyWater;
-	private Double BoneMass;
-	private Double FatMass;
-	private Double FatFreeMass;
-	private Double VisceFatIndex;
-	private Integer MetabolicAge;
+	@NotNull(message = "Campo obrigatório!")
+	private Double percFat;
+	@NotNull(message = "Campo obrigatório!")
+	private Double percLleanMass;
+	@NotNull(message = "Campo obrigatório!")
+	private Double totBobyWater;
+	@NotNull(message = "Campo obrigatório!")
+	private Double boneMass;
+	@NotNull(message = "Campo obrigatório!")
+	private Double fatMass;
+	@NotNull(message = "Campo obrigatório!")
+	private Double fatFreeMass;
+	@NotNull(message = "Campo obrigatório!")
+	private Double visceralFatIndex;
+	@NotNull(message = "Campo obrigatório!")
+	private Integer metabolicAge;
 
 	@ManyToOne
 	@JoinColumn(name = "client_id")
@@ -36,18 +45,18 @@ public class Bioimpedance  implements Serializable {
 	}
 	
 	public Bioimpedance(Long id, Double percFat, Double percLleanMass,
-			Double totBobyWater, Double boneMass, Double fatMass, Double fatFreeMass, Double visceFatIndex,
+			Double totBobyWater, Double boneMass, Double fatMass, Double fatFreeMass, Double visceralFatIndex, 
 			Integer metabolicAge, User client) {
 		super();
 		this.id = id;
-		this.PercFat = percFat;
-		this.PercLleanMass = percLleanMass;
-		this.TotBobyWater = totBobyWater;
-		this.BoneMass = boneMass;
-		this.FatMass = fatMass;
-		this.FatFreeMass = fatFreeMass;
-		this.VisceFatIndex = visceFatIndex;
-		this.MetabolicAge = metabolicAge;
+		this.percFat = percFat;
+		this.percLleanMass = percLleanMass;
+		this.totBobyWater = totBobyWater;
+		this.boneMass = boneMass;
+		this.fatMass = fatMass;
+		this.fatFreeMass = fatFreeMass;
+		this.visceralFatIndex = visceralFatIndex;
+		this.metabolicAge = metabolicAge;
 		this.client = client;
 	}
 
@@ -59,68 +68,70 @@ public class Bioimpedance  implements Serializable {
 		this.id = id;
 	}
 
+
+	
 	public Double getPercFat() {
-		return PercFat;
+		return percFat;
 	}
 
 	public void setPercFat(Double percFat) {
-		PercFat = percFat;
+		this.percFat = percFat;
 	}
 
 	public Double getPercLleanMass() {
-		return PercLleanMass;
+		return percLleanMass;
 	}
 
 	public void setPercLleanMass(Double percLleanMass) {
-		PercLleanMass = percLleanMass;
+		this.percLleanMass = percLleanMass;
 	}
 
 	public Double getTotBobyWater() {
-		return TotBobyWater;
+		return totBobyWater;
 	}
 
 	public void setTotBobyWater(Double totBobyWater) {
-		TotBobyWater = totBobyWater;
+		this.totBobyWater = totBobyWater;
 	}
 
 	public Double getBoneMass() {
-		return BoneMass;
+		return boneMass;
 	}
 
 	public void setBoneMass(Double boneMass) {
-		BoneMass = boneMass;
+		this.boneMass = boneMass;
 	}
 
 	public Double getFatMass() {
-		return FatMass;
+		return fatMass;
 	}
 
 	public void setFatMass(Double fatMass) {
-		FatMass = fatMass;
+		this.fatMass = fatMass;
 	}
 
 	public Double getFatFreeMass() {
-		return FatFreeMass;
+		return fatFreeMass;
 	}
 
 	public void setFatFreeMass(Double fatFreeMass) {
-		FatFreeMass = fatFreeMass;
+		this.fatFreeMass = fatFreeMass;
 	}
 
-	public Double getVisceFatIndex() {
-		return VisceFatIndex;
+	public Double getVisceralFatIndex() {
+		return visceralFatIndex;
 	}
 
-	public void setVisceFatIndex(Double visceFatIndex) {
-		VisceFatIndex = visceFatIndex;
+	public void setVisceralFatIndex(Double visceralFatIndex) {
+		this.visceralFatIndex = visceralFatIndex;
 	}
 
 	public Integer getMetabolicAge() {
-		return MetabolicAge;
+		return metabolicAge;
 	}
 
 	public void setMetabolicAge(Integer metabolicAge) {
-		MetabolicAge = metabolicAge;
+		this.metabolicAge = metabolicAge;
 	}
 
 	public User getClient() {
@@ -149,9 +160,6 @@ public class Bioimpedance  implements Serializable {
 	}
 
 
-	
-
-	
 	
 
 	

@@ -6,6 +6,7 @@ import java.util.Objects;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.madeoliveira.x_activity.entities.pk.PlannerExercisePK;
@@ -17,19 +18,22 @@ public class PlannerExercise implements Serializable {
 
 	@EmbeddedId
 	private PlannerExercisePK id = new PlannerExercisePK();
+	@NotNull(message = "Campo obrigatório!")
 	private Integer sequence;
+	@NotNull(message = "Campo obrigatório!")
 	private Integer movement;
-	private Double load;
+	@NotNull(message = "Campo obrigatório!")
+	private Double cargo;
 	
 	public PlannerExercise() {
 	}
-	public PlannerExercise(Planner planner,Exercise exercise,Integer sequence, Integer movement, Double load) {
+	public PlannerExercise(Planner planner,Exercise exercise,Integer sequence, Integer movement, Double cargo) {
 		super();
 		id.setPlanner(planner);
 		id.setExercise(exercise);
 		this.sequence = sequence;
 		this.movement = movement;
-		this.load = load;
+		this.cargo = cargo;
 	}
 	@JsonIgnore
 	public Planner getPlanner() {
@@ -57,11 +61,11 @@ public class PlannerExercise implements Serializable {
 	public void setMovement(Integer movement) {
 		this.movement = movement;
 	}
-	public Double getLoad() {
-		return load;
+	public Double getCargo() {
+		return cargo;
 	}
-	public void setLoad(Double load) {
-		this.load = load;
+	public void setCargo(Double cargo) {
+		this.cargo =cargo;
 	}
 	@Override
 	public int hashCode() {

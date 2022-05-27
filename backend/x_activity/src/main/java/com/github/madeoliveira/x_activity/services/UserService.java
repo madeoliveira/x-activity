@@ -11,25 +11,28 @@ import com.github.madeoliveira.x_activity.repositories.UserRepository;
 
 @Service
 public class UserService {
-	
+
 	@Autowired
 	private UserRepository repository;
-	
-	public List<User>findAll(){
+
+	public List<User> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
 	}
+
 	public User insert(User obj) {
 		return repository.save(obj);
-		
+
 	}
+
 	public void delete(Long id) {
 		repository.deleteById(id);
 	}
+
 	public User update(Long id, User obj) {
 		User entity = repository.getById(id);
 		updateData(entity, obj);
@@ -41,7 +44,7 @@ public class UserService {
 		entity.setEmail(obj.getEmail());
 		entity.setPhone(obj.getPhone());
 		entity.setPassword(obj.getPassword());
-		
+
 	}
-	
+
 }

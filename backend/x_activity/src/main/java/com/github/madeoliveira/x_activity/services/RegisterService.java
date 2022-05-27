@@ -14,7 +14,7 @@ public class RegisterService {
 	
 	@Autowired
 	private RegisterRepository repository;
-
+	@Autowired
 	
 	public List<Register>findAll(){
 		return repository.findAll();

@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.github.madeoliveira.x_activity.entities.Anthropometry;
 import com.github.madeoliveira.x_activity.entities.Bioimpedance;
 import com.github.madeoliveira.x_activity.entities.Exercise;
 import com.github.madeoliveira.x_activity.entities.Group;
@@ -16,6 +17,7 @@ import com.github.madeoliveira.x_activity.entities.PlannerExercise;
 import com.github.madeoliveira.x_activity.entities.Register;
 import com.github.madeoliveira.x_activity.entities.User;
 import com.github.madeoliveira.x_activity.entities.enums.PlannerStatus;
+import com.github.madeoliveira.x_activity.repositories.AnthropometryRepository;
 import com.github.madeoliveira.x_activity.repositories.BioimpedanceRepository;
 import com.github.madeoliveira.x_activity.repositories.ExerciseRepository;
 import com.github.madeoliveira.x_activity.repositories.GroupRepository;
@@ -43,6 +45,9 @@ public class TestConfig implements CommandLineRunner {
 
 	@Autowired
 	private BioimpedanceRepository bioimpedanceRepository;
+
+	@Autowired
+	private AnthropometryRepository anthropometryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -74,19 +79,19 @@ public class TestConfig implements CommandLineRunner {
 
 		exerciseRepository.saveAll(Arrays.asList(exercise1, exercise2, exercise3, exercise4, exercise5));
 
-		User user1 = new User(null, "Rafael", "rafael@gmail.com", "11888585", "sdfwef");
-		User user2 = new User(null, "Marcos", "marcos@gmail.com", "234112121", "FDGFDGD");
-		User user3 = new User(null, "Marcio", "marcio@gmail.com", "2345345435", "fgtfhhyg");
-		User user4 = new User(null, "João", "marcos@gmail.com", "234112121", "FDGFDGD");
+		User user1 = new User(null, "Rafael", "rafael@gmail.com", "111888585", "sdfwef");
+		User user2 = new User(null, "Marcos", "marcos@gmail.com", "1234112121", "FDGFDGD");
+		User user3 = new User(null, "Marcio", "marcio@gmail.com", "65345435", "fgtfhhyg");
+		User user4 = new User(null, "João", "marcos@gmail.com", "4112121", "FDGFDGD");
 
-		Register reg1 = new Register(null, "123890123-45", "343435567", "Rua David, 88", "Barra Funda", "São Paulo",
-				"M", user1);
-		Register reg2 = new Register(null, "533726247-25", "87654345", "Rua jARAGUA, 231", "Barra Funda", "São Paulo",
+		Register reg1 = new Register(null, "3890123-45", "343435567", "Rua David, 88", "Barra Funda", "São Paulo", "M",
+				user1);
+		Register reg2 = new Register(null, "3726247-25", "987654345", "Rua jARAGUA, 231", "Barra Funda", "São Paulo",
 				"M", user2);
-		Register reg3 = new Register(null, "12345567-95", "98578578", "Av. Ipiranga, 919", "Barra Funda", "São Paulo",
+		Register reg3 = new Register(null, "2345567-95", "398578578", "Av. Ipiranga, 919", "Barra Funda", "São Paulo",
 				"M", user3);
-		Register reg4 = new Register(null, "533726247-25", "87654345", "AV. Rio Branco, 956", "Barra Funda",
-				"São Paulo", "M", user4);
+		Register reg4 = new Register(null, "3726247-25", "857654345", "AV. Rio Branco, 956", "Barra Funda", "São Paulo",
+				"M", user4);
 
 		user1.setRegister(reg1);
 		user2.setRegister(reg2);
@@ -138,8 +143,40 @@ public class TestConfig implements CommandLineRunner {
 		Bioimpedance bio10 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user4);
 		Bioimpedance bio11 = new Bioimpedance(null, 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user4);
 		Bioimpedance bio12 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user4);
-		
-		bioimpedanceRepository.saveAll(Arrays.asList(bio1,bio2,bio3,bio4,bio5,bio6,bio7,bio8,bio9,bio10,bio11,bio12));
+
+		bioimpedanceRepository
+				.saveAll(Arrays.asList(bio1, bio2, bio3, bio4, bio5, bio6, bio7, bio8, bio9, bio10, bio11, bio12));
+
+		Anthropometry anthr1 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
+		Anthropometry anthr2 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
+		Anthropometry anthr3 = new Anthropometry(null, 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
+
+		Anthropometry anthr4 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
+		Anthropometry anthr5 = new Anthropometry(null,18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
+		Anthropometry anthr6 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
+
+		Anthropometry anthr7 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
+		Anthropometry anthr8 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
+		Anthropometry anthr9 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
+
+		Anthropometry anthr10 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7,
+				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
+		Anthropometry anthr11 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8,
+				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
+		Anthropometry anthr12 = new Anthropometry(null, 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 
+				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
+
+		anthropometryRepository.saveAll(Arrays.asList(anthr1, anthr2, anthr3, anthr4, anthr5, anthr6, anthr7, anthr8,
+				anthr9, anthr10, anthr11, anthr12));
 
 	}
 

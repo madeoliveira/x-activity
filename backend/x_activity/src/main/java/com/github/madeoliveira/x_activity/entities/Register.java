@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -22,11 +24,23 @@ public class Register implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(min = 8,max = 11,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )
 	private String cpf;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(min = 8,max = 11,message = "Deve ter no máximo {max} caracteres e no minimo {min} caracteres " + "Você digitou " + "${validatedValue}" )
 	private String rg;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(max = 25,message = "Deve ter no máximo {max} caracteres." + "Você digitou " + "${validatedValue}" )
 	private String street;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(min = 4,max = 15,message = "Deve ter no máximo {max} caracteres e no minimo {min} caracteres " + "Você digitou " + "${validatedValue}" )
 	private String city;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(min = 4,max = 15,message = "Deve ter no máximo {max} caracteres e no minimo {min} caracteres " + "Você digitou " + "${validatedValue}" )
 	private String state;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(min = 1,max = 9,message = "Deve ter no máximo {max} caracteres e no minimo {min} caracteres " + "Você digitou " + "${validatedValue}" )
 	private String gender;
 
 	@JsonIgnore

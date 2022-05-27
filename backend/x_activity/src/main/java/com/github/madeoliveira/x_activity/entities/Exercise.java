@@ -14,6 +14,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
@@ -24,7 +26,11 @@ public class Exercise implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(max = 30,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )
 	String name;
+	@NotNull(message = "Campo obrigatório!")
+	@Size(max = 300,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )
 	String description;
 	@ManyToMany
 	@JoinTable(name = "tb_exercise_group", joinColumns = @JoinColumn(name = "exercise_id"),inverseJoinColumns = @JoinColumn(name = "group_id"))

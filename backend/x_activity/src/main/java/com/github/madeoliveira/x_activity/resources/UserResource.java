@@ -2,6 +2,8 @@ package com.github.madeoliveira.x_activity.resources;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,7 +39,7 @@ public class UserResource {
 		return ResponseEntity.ok().body(obj);
 	}
 	@PostMapping
-	public ResponseEntity<User> insert(@RequestBody User obj){
+	public ResponseEntity<User> insert(@RequestBody @Valid User obj){
 		obj = service.insert(obj);
 		return ResponseEntity.ok().body(obj);
 	}
@@ -47,7 +49,7 @@ public class UserResource {
 		return ResponseEntity.noContent().build();
 	}
 	@PutMapping(value = "/{id}")
-	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody User obj){
+	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid User obj){
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);
 	}
