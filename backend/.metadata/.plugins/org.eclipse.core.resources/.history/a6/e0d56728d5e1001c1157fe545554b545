@@ -1,0 +1,5 @@
+package com.github.madeoliveira.x_activity.config;
+
+public class SwaggerConfig {
+
+}
