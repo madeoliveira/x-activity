@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.github.madeoliveira.x_activity.entities.Bioimpedance;
+import com.github.madeoliveira.x_activity.entities.User;
 import com.github.madeoliveira.x_activity.repositories.BioimpedanceRepository;
 
 @Service
@@ -24,6 +27,9 @@ public class BioimpedanceService {
 		return obj.get();
 	}
 
+	public Page<Bioimpedance> findAll(Pageable pageable) {
+		return repository.findAll(pageable);
+	}
 	public Bioimpedance insert(Bioimpedance obj) {
 		return repository.save(obj);
 

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.github.madeoliveira.x_activity.entities.Anthropometry;
@@ -17,6 +19,9 @@ public class AnthropometryService {
 
 	public List<Anthropometry> findAll() {
 		return repository.findAll();
+	}
+	public Page<Anthropometry> findAll(Pageable pageable) {
+		return repository.findAll(pageable);
 	}
 
 	public Anthropometry findById(Long id) {
@@ -40,7 +45,7 @@ public class AnthropometryService {
 	}
 
 	private void updateData(Anthropometry entity, Anthropometry obj) {
-		entity.setMomnet(obj.getMomnet());
+		entity.setMoment(obj.getMoment());
 		entity.setAbdminalFold(obj.getAbdminalFold());
 		entity.setTricepsFold(obj.getTricepsFold());
 		entity.setAbdomenCircumf(obj.getAbdomenCircumf());

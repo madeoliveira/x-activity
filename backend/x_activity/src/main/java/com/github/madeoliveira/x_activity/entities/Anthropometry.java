@@ -24,7 +24,7 @@ public class Anthropometry  implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant momnet;
+	private Instant moment;
 	@NotNull(message = "Campo obrigatório!")
 	private Double tricepsFold;
 	@NotNull(message = "Campo obrigatório!")
@@ -73,7 +73,7 @@ public class Anthropometry  implements Serializable {
 			Double thighmedialCircumf, Double calfCircumf, Double handleDiameter, User client) {
 		super();
 		this.id = id;
-		this.momnet = moment;
+		this.moment = moment;
 		this.tricepsFold = tricepsFold;
 		this.bicipitalFold = bicipitalFold;
 		this.abdminalFold = abdminalFold;
@@ -102,12 +102,12 @@ public class Anthropometry  implements Serializable {
 		this.id = id;
 	}
 
-	public Instant getMomnet() {
-		return momnet;
+	public Instant getMoment() {
+		return moment;
 	}
 
-	public void setMomnet(Instant momnet) {
-		this.momnet = momnet;
+	public void setMoment(Instant moment) {
+		this.moment = moment;
 	}
 
 	public Double getTricepsFold() {

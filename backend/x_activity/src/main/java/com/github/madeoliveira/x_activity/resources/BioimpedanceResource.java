@@ -5,6 +5,8 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +32,11 @@ public class BioimpedanceResource {
 		List<Bioimpedance> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
-
+	@GetMapping(value = "/bioimpedances/page")
+	public ResponseEntity<Page<Bioimpedance>> findAll(Pageable pageable) {
+		Page<Bioimpedance> list = service.findAll(pageable);
+		return ResponseEntity.ok().body(list);
+	}
 	@GetMapping(value = "/bioimpedances/{id}")
 	public ResponseEntity<Bioimpedance> findBuId(@PathVariable Long id) {
 		Bioimpedance obj = service.findById(id);

@@ -28,7 +28,7 @@ public class Planner implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant momnet;
+	private Instant moment;
 	private Integer plannerStatus;
 	@ManyToOne
 	@JoinColumn(name = "client_id")
@@ -41,10 +41,10 @@ public class Planner implements Serializable {
 
 	public Planner() {
 	}
-	public Planner(Long id, Instant momnet, PlannerStatus plannerStatus, String reminder, User client) {
+	public Planner(Long id, Instant moment, PlannerStatus plannerStatus, String reminder, User client) {
 		super();
 		this.id = id;
-		this.momnet = momnet;
+		this.moment = moment;
 		setPlannerStatus(plannerStatus);
 		this.reminder = reminder;
 		this.client = client;
@@ -55,11 +55,11 @@ public class Planner implements Serializable {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Instant getMomnet() {
-		return momnet;
+	public Instant getMoment() {
+		return moment;
 	}
-	public void setMomnet(Instant momnet) {
-		this.momnet = momnet;
+	public void setMomnet(Instant moment) {
+		this.moment = moment;
 	}
 	public PlannerStatus getPlannerStatus() {
 		return PlannerStatus.valueOf(plannerStatus);
