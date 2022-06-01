@@ -43,10 +43,7 @@
     <fullyQualifiedTypeName name="javax.validation.Valid"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Email"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.Max"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.AnthropometryRepository"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Anthropometry"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.UserRepository"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
@@ -58,6 +55,9 @@
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.RegisterRepository"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.privilegedactions.GetDeclaredConstructor"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.services.RegisterService"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.User"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Register"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.UserRepository"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.User"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.AnthropometryRepository"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Anthropometry"/>
 </qualifiedTypeNameHistroy>
