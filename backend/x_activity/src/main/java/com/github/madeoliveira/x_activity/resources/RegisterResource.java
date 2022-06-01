@@ -17,38 +17,39 @@ import com.github.madeoliveira.x_activity.entities.Register;
 import com.github.madeoliveira.x_activity.services.RegisterService;
 
 @RestController
-@RequestMapping(value = "/registers")
+@RequestMapping(value = "/api")
 public class RegisterResource {
 
 	@Autowired
 	private RegisterService service;
 
-	@GetMapping
+
+	@GetMapping(value = "/registers")
 	public ResponseEntity<List<Register>> findAll() {
 		List<Register> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/registers/{id}")
 	public ResponseEntity<Register> findBuId(@PathVariable Long id) {
 		Register obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
 	}
 
-	@PostMapping
-	public ResponseEntity<Register> insert(@RequestBody Register obj) {
-		obj = service.insert(obj);
-	return ResponseEntity.ok().body(obj);
-
+	@PostMapping(value = "/registers/{id}")
+	public ResponseEntity<Register> inset(@PathVariable Long id, @RequestBody Register obj) {
+		obj = service.insertRegister(id, obj);
+		return ResponseEntity.ok().body(obj);
 	}
+	
 
-	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<Void> delete(@PathVariable Long id) {
-		service.delete(id);
-		return ResponseEntity.noContent().build();
-	}
+//	@DeleteMapping(value = "/registers/{id}")
+//	public ResponseEntity<Void> delete(@PathVariable Long id) {
+//		service.delete(id);
+//		return ResponseEntity.noContent().build();
+//	}
 
-	@PutMapping(value = "/{id}")
+	@PutMapping(value = "/registers/{id}")
 	public ResponseEntity<Register> update(@PathVariable Long id, @RequestBody Register obj) {
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);

@@ -13,19 +13,19 @@ import com.github.madeoliveira.x_activity.entities.Planner;
 import com.github.madeoliveira.x_activity.services.PlannerService;
 
 @RestController
-@RequestMapping(value = "/planners")
+@RequestMapping(value = "/api")
 public class PlannerResource {
 
 	@Autowired
 	private PlannerService service;
 
-	@GetMapping
+	@GetMapping(value = "/planners")
 	public ResponseEntity<List<Planner>> findAll() {
 		List<Planner> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/planners/{id}")
 	public ResponseEntity<Planner> findBuId(@PathVariable Long id) {
 		Planner obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);

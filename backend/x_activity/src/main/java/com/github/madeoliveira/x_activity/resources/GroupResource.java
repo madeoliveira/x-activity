@@ -17,19 +17,19 @@ import com.github.madeoliveira.x_activity.entities.Group;
 import com.github.madeoliveira.x_activity.services.GroupService;
 
 @RestController
-@RequestMapping(value = "/groups")
+@RequestMapping(value = "/api")
 public class GroupResource {
 
 	@Autowired
 	private GroupService service;
 
-	@GetMapping
+	@GetMapping(value = "/groups")
 	public ResponseEntity<List<Group>> findAll() {
 		List<Group> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/groups/{id}")
 	public ResponseEntity<Group> findBuId(@PathVariable Long id) {
 		Group obj = service.findById(id);
 		return ResponseEntity.ok().body(obj);
@@ -39,12 +39,12 @@ public class GroupResource {
 		obj = service.insert(obj);
 		return ResponseEntity.ok().body(obj);
 	}
-	@DeleteMapping(value = "/{id}")
+	@DeleteMapping(value = "/groups/{id}")
 	public ResponseEntity<Void>delete(@PathVariable Long id){
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
-	@PutMapping(value = "/{id}")
+	@PutMapping(value = "/groups/{id}")
 	public ResponseEntity<Group> update(@PathVariable Long id, @RequestBody Group obj){
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);

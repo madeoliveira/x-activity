@@ -15,6 +15,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 
+
 	public List<User> findAll() {
 		return repository.findAll();
 	}
@@ -38,13 +39,13 @@ public class UserService {
 		updateData(entity, obj);
 		return repository.save(entity);
 	}
-
+	
+	
 	private void updateData(User entity, User obj) {
 		entity.setName(obj.getName());
 		entity.setEmail(obj.getEmail());
 		entity.setPhone(obj.getPhone());
 		entity.setPassword(obj.getPassword());
-
 	}
 
 }

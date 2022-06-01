@@ -1,0 +1,75 @@
+package com.github.madeoliveira.x_activity.services;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.github.madeoliveira.x_activity.entities.Register;
+import com.github.madeoliveira.x_activity.entities.User;
+import com.github.madeoliveira.x_activity.repositories.RegisterRepository;
+import com.github.madeoliveira.x_activity.repositories.UserRepository;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserRepository repository;
+	@Autowired
+	private RegisterRepository registerRepository;
+
+	public List<User> findAll() {
+		return repository.findAll();
+	}
+
+	public User findById(Long id) {
+		Optional<User> obj = repository.findById(id);
+		return obj.get();
+	}
+	
+	//teste
+	public User insetReg(Long id, Register obj2) {
+		User entity = repository.getById(id);
+		entity.setRegister(registerRepository.save(obj2)); 
+		updateDataReg(entity, obj2);
+		return repository.save(entity);
+	}
+
+	public User insert(User obj) {
+		return repository.save(obj);
+
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
+	public User update(Long id, User obj) {
+		User entity = repository.getById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	
+	private void updateDataReg(User entity, Register obj) {
+		entity.getRegister().setClient(obj.getClient());
+		entity.getRegister().setCity(obj.getCity());
+		entity.getRegister().setCpf(obj.getCpf());
+		entity.getRegister().setRg(obj.getRg());
+		entity.getRegister().setState(obj.getState());
+		entity.getRegister().setState(obj.getState());
+		entity.getRegister().setStreet(obj.getStreet());
+		
+	}
+
+	private void updateData(User entity, User obj) {
+		entity.setName(obj.getName());
+		entity.setEmail(obj.getEmail());
+		entity.setPhone(obj.getPhone());
+		entity.setPassword(obj.getPassword());
+		
+	}
+
+}

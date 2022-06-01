@@ -7,29 +7,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.madeoliveira.x_activity.entities.Register;
+import com.github.madeoliveira.x_activity.entities.User;
 import com.github.madeoliveira.x_activity.repositories.RegisterRepository;
+import com.github.madeoliveira.x_activity.repositories.UserRepository;
 
 @Service
 public class RegisterService {
-	
+
 	@Autowired
 	private RegisterRepository repository;
+
 	@Autowired
-	
-	public List<Register>findAll(){
+	private UserRepository userRepository;
+
+	public List<Register> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public Register findById(Long id) {
 		Optional<Register> obj = repository.findById(id);
 		return obj.get();
 	}
-	public Register insert(Register obj) {
-		return repository.save(obj);	
+
+	public Register insertRegister(Long id, Register reg) {
+		User user = userRepository.findById(id).get();
+		reg.setClient(user);
+		user.setRegister(reg);
+		userRepository.save(user);
+		return repository.save(reg);
 	}
-	public void delete(Long id) {
-		repository.deleteById(id);
-	}
+
+// Implementar 
+//	public void delete(Long id) {
+//		repository.deleteById(id); 
+//	}
+
 	public Register update(Long id, Register obj) {
 		Register entity = repository.getById(id);
 		updateData(entity, obj);
@@ -43,7 +55,7 @@ public class RegisterService {
 		entity.setState(obj.getState());
 		entity.setCity(obj.getCity());
 		entity.setGender(obj.getGender());
-	    entity.setClient(obj.getClient());
-		}
-	
+		entity.setClient(obj.getClient());
+	}
+
 }

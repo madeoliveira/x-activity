@@ -23,4 +23,27 @@ public class ExerciseService {
 		Optional<Exercise> obj = repository.findById(id);
 		return obj.get();
 	}
+	
+
+	public Exercise insert(Exercise obj) {
+		return repository.save(obj);
+
+	}
+
+	public void delete(Long id) {
+		repository.deleteById(id);
+	}
+
+	public Exercise update(Long id, Exercise obj) {
+		Exercise entity = repository.getById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	
+	
+	private void updateData(Exercise entity, Exercise obj) {
+		entity.setName(obj.getName());
+		entity.setDescription(obj.getDescription());
+	}
+
 }
