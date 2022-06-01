@@ -9,7 +9,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.github.madeoliveira.x_activity.entities.Bioimpedance;
-import com.github.madeoliveira.x_activity.entities.User;
 import com.github.madeoliveira.x_activity.repositories.BioimpedanceRepository;
 
 @Service
