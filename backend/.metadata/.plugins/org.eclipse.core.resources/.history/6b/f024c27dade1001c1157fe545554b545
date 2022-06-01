@@ -1,7 +1,6 @@
 package com.github.madeoliveira.x_activity.entities;
 
 import java.io.Serializable;
-import java.time.Instant;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -13,8 +12,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 @Entity
 @Table(name = "tb_anthropometry")
 public class Anthropometry  implements Serializable {
@@ -23,8 +20,6 @@ public class Anthropometry  implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
-	private Instant momnet;
 	@NotNull(message = "Campo obrigatório!")
 	private Double tricepsFold;
 	@NotNull(message = "Campo obrigatório!")
@@ -67,13 +62,12 @@ public class Anthropometry  implements Serializable {
 	public Anthropometry(){
 	}
 
-	public Anthropometry(Long id, Instant moment, Double tricepsFold, Double bicipitalFold, Double abdminalFold, Double subscapularFold,
+	public Anthropometry(Long id, Double tricepsFold, Double bicipitalFold, Double abdminalFold, Double subscapularFold,
 			Double middleAxillaryFold, Double thighFold, Double thoracicFold, Double suprailacFold, Double calfFold,
 			Double neckCircumf, Double waistCircumf, Double hipCircumf, Double abdomenCircumf, Double relaxedArmCircumf,
 			Double thighmedialCircumf, Double calfCircumf, Double handleDiameter, User client) {
 		super();
 		this.id = id;
-		this.momnet = moment;
 		this.tricepsFold = tricepsFold;
 		this.bicipitalFold = bicipitalFold;
 		this.abdminalFold = abdminalFold;
@@ -100,14 +94,6 @@ public class Anthropometry  implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Instant getMomnet() {
-		return momnet;
-	}
-
-	public void setMomnet(Instant momnet) {
-		this.momnet = momnet;
 	}
 
 	public Double getTricepsFold() {

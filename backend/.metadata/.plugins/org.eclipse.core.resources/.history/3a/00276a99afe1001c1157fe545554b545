@@ -40,7 +40,6 @@ public class BioimpedanceService {
 	}
 
 	private void updateData(Bioimpedance entity, Bioimpedance obj) {
-		entity.setMoment(obj.getMoment());
 		entity.setBoneMass(obj.getBoneMass());
 		entity.setClient(obj.getClient());
 		entity.setFatFreeMass(obj.getFatFreeMass());

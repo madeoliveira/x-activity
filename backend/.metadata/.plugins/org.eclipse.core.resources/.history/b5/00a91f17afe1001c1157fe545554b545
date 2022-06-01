@@ -40,7 +40,6 @@ public class AnthropometryService {
 	}
 
 	private void updateData(Anthropometry entity, Anthropometry obj) {
-		entity.setMomnet(obj.getMomnet());
 		entity.setAbdminalFold(obj.getAbdminalFold());
 		entity.setTricepsFold(obj.getTricepsFold());
 		entity.setAbdomenCircumf(obj.getAbdomenCircumf());

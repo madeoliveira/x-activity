@@ -67,13 +67,12 @@ public class Anthropometry  implements Serializable {
 	public Anthropometry(){
 	}
 
-	public Anthropometry(Long id, Instant moment, Double tricepsFold, Double bicipitalFold, Double abdminalFold, Double subscapularFold,
+	public Anthropometry(Long id, Double tricepsFold, Double bicipitalFold, Double abdminalFold, Double subscapularFold,
 			Double middleAxillaryFold, Double thighFold, Double thoracicFold, Double suprailacFold, Double calfFold,
 			Double neckCircumf, Double waistCircumf, Double hipCircumf, Double abdomenCircumf, Double relaxedArmCircumf,
 			Double thighmedialCircumf, Double calfCircumf, Double handleDiameter, User client) {
 		super();
 		this.id = id;
-		this.momnet = moment;
 		this.tricepsFold = tricepsFold;
 		this.bicipitalFold = bicipitalFold;
 		this.abdminalFold = abdminalFold;
@@ -100,14 +99,6 @@ public class Anthropometry  implements Serializable {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Instant getMomnet() {
-		return momnet;
-	}
-
-	public void setMomnet(Instant momnet) {
-		this.momnet = momnet;
 	}
 
 	public Double getTricepsFold() {

@@ -128,51 +128,51 @@ public class TestConfig implements CommandLineRunner {
 		plannerExerciseRepository.saveAll(Arrays.asList(plannerExercise1, plannerExercise2, plannerExercise3,
 				plannerExercise4, plannerExercise5));
 
-		Bioimpedance bio1 = new Bioimpedance(null, Instant.parse("2020-03-13T11:40:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user1);
-		Bioimpedance bio2 = new Bioimpedance(null, Instant.parse("2020-05-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user1);
-		Bioimpedance bio3 = new Bioimpedance(null, Instant.parse("2020-08-13T11:45:08Z"), 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user1);
+		Bioimpedance bio1 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user1);
+		Bioimpedance bio2 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user1);
+		Bioimpedance bio3 = new Bioimpedance(null, 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user1);
 
-		Bioimpedance bio4 = new Bioimpedance(null, Instant.parse("2020-02-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user2);
-		Bioimpedance bio5 = new Bioimpedance(null, Instant.parse("2020-04-13T11:45:08Z"), 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user2);
-		Bioimpedance bio6 = new Bioimpedance(null, Instant.parse("2020-09-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user2);
+		Bioimpedance bio4 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user2);
+		Bioimpedance bio5 = new Bioimpedance(null, 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user2);
+		Bioimpedance bio6 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user2);
 
-		Bioimpedance bio7 = new Bioimpedance(null, Instant.parse("2020-03-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user3);
-		Bioimpedance bio8 = new Bioimpedance(null, Instant.parse("2020-06-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user3);
-		Bioimpedance bio9 = new Bioimpedance(null, Instant.parse("2020-09-13T11:45:08Z"), 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user3);
+		Bioimpedance bio7 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user3);
+		Bioimpedance bio8 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user3);
+		Bioimpedance bio9 = new Bioimpedance(null, 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user3);
 
-		Bioimpedance bio10 = new Bioimpedance(null, Instant.parse("2020-02-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user4);
-		Bioimpedance bio11 = new Bioimpedance(null, Instant.parse("2020-04-13T11:45:08Z"), 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user4);
-		Bioimpedance bio12 = new Bioimpedance(null, Instant.parse("2020-07-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user4);
+		Bioimpedance bio10 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user4);
+		Bioimpedance bio11 = new Bioimpedance(null, 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user4);
+		Bioimpedance bio12 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user4);
 
 		bioimpedanceRepository
 				.saveAll(Arrays.asList(bio1, bio2, bio3, bio4, bio5, bio6, bio7, bio8, bio9, bio10, bio11, bio12));
 
-		Anthropometry anthr1 = new Anthropometry(null, Instant.parse("2020-03-13T11:40:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+		Anthropometry anthr1 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
-		Anthropometry anthr2 = new Anthropometry(null, Instant.parse("2020-05-13T11:45:08Z"), 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
+		Anthropometry anthr2 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
-		Anthropometry anthr3 = new Anthropometry(null, Instant.parse("2020-08-13T11:45:08Z"), 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
+		Anthropometry anthr3 = new Anthropometry(null, 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user1);
 
-		Anthropometry anthr4 = new Anthropometry(null, Instant.parse("2020-02-13T11:45:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+		Anthropometry anthr4 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
-		Anthropometry anthr5 = new Anthropometry(null, Instant.parse("2020-04-13T11:45:08Z"),18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
+		Anthropometry anthr5 = new Anthropometry(null,18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 72.9,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
-		Anthropometry anthr6 = new Anthropometry(null, Instant.parse("2020-09-13T11:45:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+		Anthropometry anthr6 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user2);
 
-		Anthropometry anthr7 = new Anthropometry(null, Instant.parse("2020-03-13T11:45:08Z"), 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
+		Anthropometry anthr7 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7, 72.5,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
-		Anthropometry anthr8 = new Anthropometry(null, Instant.parse("2020-06-13T11:45:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+		Anthropometry anthr8 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
-		Anthropometry anthr9 = new Anthropometry(null, Instant.parse("2020-09-13T11:45:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
+		Anthropometry anthr9 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8, 72.3,
 				98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user3);
 
-		Anthropometry anthr10 = new Anthropometry(null, Instant.parse("2020-02-13T11:45:08Z"), 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7,
+		Anthropometry anthr10 = new Anthropometry(null, 18.5, 11.50, 13.0, 10.8, 13.2, 26.4, 8.5, 11.0, 21.0, 33.7,
 				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
-		Anthropometry anthr11 = new Anthropometry(null, Instant.parse("2020-04-13T11:45:08Z"), 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8,
+		Anthropometry anthr11 = new Anthropometry(null, 19.0, 11.00, 12.0, 10.0, 13.0, 26.0, 8.0, 10.0, 22.0, 33.8,
 				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
-		Anthropometry anthr12 = new Anthropometry(null, Instant.parse("2020-07-13T11:45:08Z"), 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 
+		Anthropometry anthr12 = new Anthropometry(null, 18.0, 12.00, 13.5, 10.4, 13.9, 26.6, 8.8, 12.0, 20.0, 33.6, 
 				72.3, 98.1, 78.1, 29.0, 57.2, 36.9, 16.0, user4);
 
 		anthropometryRepository.saveAll(Arrays.asList(anthr1, anthr2, anthr3, anthr4, anthr5, anthr6, anthr7, anthr8,

@@ -128,21 +128,21 @@ public class TestConfig implements CommandLineRunner {
 		plannerExerciseRepository.saveAll(Arrays.asList(plannerExercise1, plannerExercise2, plannerExercise3,
 				plannerExercise4, plannerExercise5));
 
-		Bioimpedance bio1 = new Bioimpedance(null, Instant.parse("2020-03-13T11:40:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user1);
-		Bioimpedance bio2 = new Bioimpedance(null, Instant.parse("2020-05-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user1);
-		Bioimpedance bio3 = new Bioimpedance(null, Instant.parse("2020-08-13T11:45:08Z"), 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user1);
+		Bioimpedance bio1 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user1);
+		Bioimpedance bio2 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user1);
+		Bioimpedance bio3 = new Bioimpedance(null, 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user1);
 
-		Bioimpedance bio4 = new Bioimpedance(null, Instant.parse("2020-02-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user2);
-		Bioimpedance bio5 = new Bioimpedance(null, Instant.parse("2020-04-13T11:45:08Z"), 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user2);
-		Bioimpedance bio6 = new Bioimpedance(null, Instant.parse("2020-09-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user2);
+		Bioimpedance bio4 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user2);
+		Bioimpedance bio5 = new Bioimpedance(null, 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user2);
+		Bioimpedance bio6 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user2);
 
-		Bioimpedance bio7 = new Bioimpedance(null, Instant.parse("2020-03-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user3);
-		Bioimpedance bio8 = new Bioimpedance(null, Instant.parse("2020-06-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user3);
-		Bioimpedance bio9 = new Bioimpedance(null, Instant.parse("2020-09-13T11:45:08Z"), 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user3);
+		Bioimpedance bio7 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 28, user3);
+		Bioimpedance bio8 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 29, user3);
+		Bioimpedance bio9 = new Bioimpedance(null, 24.9, 70.9, 36.2, 3.2, 17.2, 48.0, 3.0, 28, user3);
 
-		Bioimpedance bio10 = new Bioimpedance(null, Instant.parse("2020-02-13T11:45:08Z"), 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user4);
-		Bioimpedance bio11 = new Bioimpedance(null, Instant.parse("2020-04-13T11:45:08Z"), 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user4);
-		Bioimpedance bio12 = new Bioimpedance(null, Instant.parse("2020-07-13T11:45:08Z"), 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user4);
+		Bioimpedance bio10 = new Bioimpedance(null, 26.9, 69.9, 35.4, 2.4, 17.6, 48.0, 3.0, 32, user4);
+		Bioimpedance bio11 = new Bioimpedance(null, 25.1, 70.8, 36.2, 3.2, 17.2, 48.0, 3.0, 30, user4);
+		Bioimpedance bio12 = new Bioimpedance(null, 25.9, 70.0, 35.9, 2.5, 17.5, 48.0, 3.0, 31, user4);
 
 		bioimpedanceRepository
 				.saveAll(Arrays.asList(bio1, bio2, bio3, bio4, bio5, bio6, bio7, bio8, bio9, bio10, bio11, bio12));
