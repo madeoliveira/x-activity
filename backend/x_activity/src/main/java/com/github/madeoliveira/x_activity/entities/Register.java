@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
@@ -20,6 +22,7 @@ public class Register implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotNull(message = "Campo obrigatório!")
 	@Size(min = 8,max = 11,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )

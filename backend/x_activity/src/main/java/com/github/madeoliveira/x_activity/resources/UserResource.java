@@ -26,39 +26,40 @@ public class UserResource {
 
 	@Autowired
 	private UserService service;
-	
-	
 
 	@GetMapping(value = "/users")
 	public ResponseEntity<List<User>> findAll() {
 		List<User> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
+
 	@GetMapping(value = "/users/page")
 	public ResponseEntity<Page<User>> findAll(Pageable pageable) {
 		Page<User> list = service.findAll(pageable);
 		return ResponseEntity.ok().body(list);
 	}
-	
+
 	@GetMapping(value = "/users/{id}")
 	public ResponseEntity<User> findBuId(@PathVariable Long id) {
 		User obj = service.findById(id);
-		
+
 		return ResponseEntity.ok().body(obj);
 	}
+
 	@PostMapping(value = "/users")
-	public ResponseEntity<User> insert(@RequestBody @Valid User obj){
+	public ResponseEntity<User> insert(@RequestBody @Valid User obj) {
 		obj = service.insert(obj);
 		return ResponseEntity.ok().body(obj);
 	}
-	
+
 	@DeleteMapping(value = "/users/{id}")
-	public ResponseEntity<Void>delete(@PathVariable Long id){
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
+
 	@PutMapping(value = "/users/{id}")
-	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid User obj){
+	public ResponseEntity<User> update(@PathVariable Long id, @RequestBody @Valid User obj) {
 		obj = service.update(id, obj);
 		return ResponseEntity.ok().body(obj);
 	}

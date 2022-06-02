@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.persistence.JoinTable"/>
-    <fullyQualifiedTypeName name="javax.persistence.ManyToMany"/>
-    <fullyQualifiedTypeName name="java.lang.IllegalArgumentException"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.entities.enums.PlannerStatus"/>
-    <fullyQualifiedTypeName name="java.lang.Exception"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.entities.Exercise"/>
-    <fullyQualifiedTypeName name="javax.persistence.JoinColumn"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.entities.Planner"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.repositories.PlannerExerciseRepository"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.entities.pk.PlannerExercisePK"/>
     <fullyQualifiedTypeName name="java.util.HashSet"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.physical_activity.entities.PlannerExercise"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.DeleteMapping"/>
@@ -45,19 +35,29 @@
     <fullyQualifiedTypeName name="javax.validation.constraints.Max"/>
     <fullyQualifiedTypeName name="java.util.Arrays"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PostMapping"/>
-    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="java.util.Set"/>
     <fullyQualifiedTypeName name="javax.security.auth.login.AccountNotFoundException"/>
     <fullyQualifiedTypeName name="org.hibernate.annotations.NotFound"/>
     <fullyQualifiedTypeName name="java.lang.ClassNotFoundException"/>
     <fullyQualifiedTypeName name="org.apache.catalina.startup.ClassLoaderFactory.Repository"/>
     <fullyQualifiedTypeName name="java.util.Optional"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.RegisterRepository"/>
     <fullyQualifiedTypeName name="org.hibernate.validator.internal.util.privilegedactions.GetDeclaredConstructor"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.services.RegisterService"/>
-    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Register"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.UserRepository"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.User"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.AnthropometryRepository"/>
     <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Anthropometry"/>
+    <fullyQualifiedTypeName name="org.springframework.data.domain.Pageable"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Configuration"/>
+    <fullyQualifiedTypeName name="springfox.documentation.swagger2.annotations.EnableSwagger2"/>
+    <fullyQualifiedTypeName name="springfox.documentation.spring.web.plugins.Docket"/>
+    <fullyQualifiedTypeName name="springfox.documentation.builders.RequestHandlerSelectors"/>
+    <fullyQualifiedTypeName name="springfox.documentation.spi.DocumentationType"/>
+    <fullyQualifiedTypeName name="org.springframework.context.annotation.Bean"/>
+    <fullyQualifiedTypeName name="org.springframework.core.type.filter.RegexPatternTypeFilter"/>
+    <fullyQualifiedTypeName name="springfox.documentation.builders.PathSelectors"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.repositories.RegisterRepository"/>
+    <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+    <fullyQualifiedTypeName name="com.github.madeoliveira.x_activity.entities.Register"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RequestBody"/>
 </qualifiedTypeNameHistroy>

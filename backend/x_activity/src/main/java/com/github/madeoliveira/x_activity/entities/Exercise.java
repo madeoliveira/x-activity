@@ -18,22 +18,23 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
-@Table(name = "tb_exercise" )
+@Table(name = "tb_exercise")
 public class Exercise implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
+	private Long id;
 	@NotNull(message = "Campo obrigatório!")
-	@Size(max = 30,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )
-	String name;
+	@Size(max = 30, message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}")
+	private String name;
 	@NotNull(message = "Campo obrigatório!")
-	@Size(max = 300,message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}" )
-	String description;
+	@Size(max = 300, message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}")
+	private String description;
 	@ManyToMany
-	@JoinTable(name = "tb_exercise_group", joinColumns = @JoinColumn(name = "exercise_id"),inverseJoinColumns = @JoinColumn(name = "group_id"))
+	@JoinTable(name = "tb_exercise_group", joinColumns = @JoinColumn(name = "exercise_id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
 	private Set<Group> groups = new HashSet<>();
 	@OneToMany(mappedBy = "id.exercise")
 	private Set<PlannerExercise> exercises = new HashSet<>();
@@ -75,14 +76,16 @@ public class Exercise implements Serializable {
 	public Set<Group> getGroups() {
 		return groups;
 	}
+
 	@JsonIgnore
-	public Set<Planner> getPlanners(){
+	public Set<Planner> getPlanners() {
 		Set<Planner> set = new HashSet<>();
 		for (PlannerExercise x : exercises) {
 			set.add(x.getPlanner());
 		}
 		return set;
 	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);

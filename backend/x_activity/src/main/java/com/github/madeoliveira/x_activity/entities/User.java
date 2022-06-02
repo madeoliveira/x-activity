@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -24,7 +25,7 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@NotNull(message = "Campo obrigatório!")
 	@Size(min = 3,max = 30,message = "Deve ter no máximo {max} caracteres e no minimo {min} caracteres " + "Você digitou " + "${validatedValue}" )
@@ -48,6 +49,7 @@ public class User implements Serializable {
 	private List<Bioimpedance> bioimpedances = new ArrayList<>();
 	
 	@OneToOne(mappedBy = "client", cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
 	private Register register;
 
 	public User() {
