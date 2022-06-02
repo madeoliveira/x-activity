@@ -119,11 +119,11 @@ public class TestConfig implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(user1, user2, user3, user4));
 		plannerRepository.saveAll(Arrays.asList(planner1, planner2, planner3, planner4, planner5, planner6));
 
-		PlannerExercise plannerExercise1 = new PlannerExercise(planner1, exercise4, 3, 12, 18.0,"A");
-		PlannerExercise plannerExercise2 = new PlannerExercise(planner1, exercise3, 3, 10, 10.0,"B");
-		PlannerExercise plannerExercise3 = new PlannerExercise(planner2, exercise1, 4, 15, 12.0,"B");
-		PlannerExercise plannerExercise4 = new PlannerExercise(planner3, exercise4, 2, 16, 11.0,"A");
-		PlannerExercise plannerExercise5 = new PlannerExercise(planner1, exercise5, 5, 8, 14.0,"B");
+		PlannerExercise plannerExercise1 = new PlannerExercise(planner1, exercise4, 3, 12, 18.0);
+		PlannerExercise plannerExercise2 = new PlannerExercise(planner1, exercise3, 3, 10, 10.0);
+		PlannerExercise plannerExercise3 = new PlannerExercise(planner2, exercise1, 4, 15, 12.0);
+		PlannerExercise plannerExercise4 = new PlannerExercise(planner3, exercise4, 2, 16, 11.0);
+		PlannerExercise plannerExercise5 = new PlannerExercise(planner1, exercise5, 5, 8, 14.0);
 
 		plannerExerciseRepository.saveAll(Arrays.asList(plannerExercise1, plannerExercise2, plannerExercise3,
 				plannerExercise4, plannerExercise5));

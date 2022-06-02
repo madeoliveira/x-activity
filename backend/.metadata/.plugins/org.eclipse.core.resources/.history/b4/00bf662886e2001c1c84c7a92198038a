@@ -7,7 +7,6 @@ import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.github.madeoliveira.x_activity.entities.pk.PlannerExercisePK;
@@ -25,20 +24,16 @@ public class PlannerExercise implements Serializable {
 	private Integer movement;
 	@NotNull(message = "Campo obrigatório!")
 	private Double cargo;
-	@NotNull(message = "Campo obrigatório!")
-	@Size(max = 20, message = "Deve ter no máximo {max} caraquiteres. " + "Você digitou " + "${validatedValue}")
-	private String training;
 	
 	public PlannerExercise() {
 	}
-	public PlannerExercise(Planner planner,Exercise exercise,Integer sequence, Integer movement, Double cargo, String training) {
+	public PlannerExercise(Planner planner,Exercise exercise,Integer sequence, Integer movement, Double cargo) {
 		super();
 		id.setPlanner(planner);
 		id.setExercise(exercise);
 		this.sequence = sequence;
 		this.movement = movement;
 		this.cargo = cargo;
-		this.training = training;
 	}
 	@JsonIgnore
 	public Planner getPlanner() {
@@ -71,13 +66,6 @@ public class PlannerExercise implements Serializable {
 	}
 	public void setCargo(Double cargo) {
 		this.cargo =cargo;
-	}
-	
-	public String getTraining() {
-		return training;
-	}
-	public void setTraining(String training) {
-		this.training = training;
 	}
 	@Override
 	public int hashCode() {
